@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand: Deep teal-indigo for a premium healthcare feel */
+    --background: 210 20% 98%;
+    --foreground: 220 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 12%;
+
+    --primary: 204 94% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 204 60% 94%;
+    --secondary-foreground: 204 80% 25%;
+
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 18% 50%;
+
+    --accent: 204 55% 92%;
+    --accent-foreground: 204 75% 25%;
+
+    --destructive: 0 78% 53%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 72% 35%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 95% 50%;
+    --warning-foreground: 32 90% 14%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 90%;
+    --ring: 204 94% 40%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar specific */
+    --sidebar-bg: 222 47% 11%;
+    --sidebar-fg: 215 20% 80%;
+    --sidebar-active-bg: 204 94% 40%;
+    --sidebar-active-fg: 0 0% 100%;
+    --sidebar-hover-bg: 222 40% 17%;
+    --sidebar-border: 222 40% 18%;
+    --sidebar-muted: 215 20% 55%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 25% 93%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 25% 93%;
+
+    --popover: 222 44% 13%;
+    --popover-foreground: 210 25% 93%;
+
+    --primary: 204 90% 55%;
+    --primary-foreground: 222 47% 8%;
+
+    --secondary: 222 40% 18%;
+    --secondary-foreground: 210 25% 85%;
+
+    --muted: 222 40% 16%;
+    --muted-foreground: 215 18% 58%;
+
+    --accent: 222 38% 20%;
+    --accent-foreground: 204 70% 75%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 65% 42%;
+    --success-foreground: 222 47% 8%;
+
+    --warning: 38 90% 55%;
+    --warning-foreground: 32 90% 10%;
+
+    --border: 222 40% 20%;
+    --input: 222 40% 22%;
+    --ring: 204 90% 55%;
+
+    --sidebar-bg: 222 52% 7%;
+    --sidebar-fg: 215 20% 72%;
+    --sidebar-active-bg: 204 90% 40%;
+    --sidebar-active-fg: 0 0% 100%;
+    --sidebar-hover-bg: 222 44% 13%;
+    --sidebar-border: 222 44% 14%;
+    --sidebar-muted: 215 18% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-border;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
+}
+
+@layer utilities {
+  .sidebar-bg { background-color: hsl(var(--sidebar-bg)); }
+  .sidebar-text { color: hsl(var(--sidebar-fg)); }
+  .sidebar-border-color { border-color: hsl(var(--sidebar-border)); }
+
+  .stat-gradient-blue { background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%); }
+  .stat-gradient-violet { background: linear-gradient(135deg, #ede9fe 0%, #f5f3ff 100%); }
+  .stat-gradient-cyan { background: linear-gradient(135deg, #cffafe 0%, #ecfeff 100%); }
+  .stat-gradient-emerald { background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%); }
+  .stat-gradient-amber { background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%); }
+  .stat-gradient-rose { background: linear-gradient(135deg, #ffe4e6 0%, #fff1f2 100%); }
+
+  .dark .stat-gradient-blue { background: linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0.05) 100%); }
+  .dark .stat-gradient-violet { background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(139,92,246,0.05) 100%); }
+  .dark .stat-gradient-cyan { background: linear-gradient(135deg, rgba(6,182,212,0.15) 0%, rgba(6,182,212,0.05) 100%); }
+  .dark .stat-gradient-emerald { background: linear-gradient(135deg, rgba(16,185,129,0.15) 0%, rgba(16,185,129,0.05) 100%); }
+  .dark .stat-gradient-amber { background: linear-gradient(135deg, rgba(245,158,11,0.15) 0%, rgba(245,158,11,0.05) 100%); }
+  .dark .stat-gradient-rose { background: linear-gradient(135deg, rgba(244,63,94,0.15) 0%, rgba(244,63,94,0.05) 100%); }
+}
